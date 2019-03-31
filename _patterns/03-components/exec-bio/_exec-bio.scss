@@ -1,55 +1,93 @@
 .exec-bio {
-  padding: $spacing--xl $spacing--xl;
-  &__avatar {
+  &__image {
+    width: 100%;
+  }
+  &__inner {
+    background-color: $c-gray--lightest;
+    position: relative;
     float: left;
-    .avatar {
-      height: $fs--xl * 4;
-      width: $fs--xl * 4;
-      @include breakpoint($bp--medium) {
-        height: $fs--xl * 6;
-        width: $fs--xl * 6;
-      }
-    }
+    padding: 2rem;
   }
-  &--even {
-    .exec-bio__avatar {
-      float: right;
-      padding: 0px 0px $spacing--m $spacing--m;
-    }
-    background-color: $c-blue--light;
+  &__line {
+    height: 2px;
+    background-color: $c-yellow;
+    width: 150px;
+    position: absolute;
+    display: block;
+    right: -3rem;
   }
-  &--odd {
-    background-color: $c-iron;
-    .exec-bio__avatar {
-      padding: 0px $spacing--m $spacing--m 0px;
-    }
-    .exec-bio__name, .exec-bio__twitter {
-      text-align: right;
-    }
-  }
-  &__text {
-  }
-  &__name {
-    margin-bottom: 0;
-  }
-  &__bio {
-
-  }
-  &__twitter {
+  a.exec-bio__twitter {
+    color: $c-yellow;
+    transition: color $trans-opacity;
     &:hover {
-      color: $c-blue;
+      color: darken($c-yellow, 10);
     }
   }
-
-  @include breakpoint($bp--small) {
+  &__role {
+    color: $c-yellow;
+    display: flex;
+    vertical-align: center;
+  }
+  @include breakpoint($bp--medium) {
+    position: relative;
+    padding: 3rem 0 0 4rem;
+    &__image {
+      max-width: 600px;
+      width: 54vw;
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 10;
+    }
+    &__inner {
+      position: relative;
+      max-width: 1000px;
+      width: 80vw;
+      float: left;
+      padding: 2rem 2rem 4rem 2rem;
+    }
+    &__info {
+      max-width: 400px;
+      width: 27vw;
+      float: right;
+    }
+    &__line {
+      height: 2px;
+      background-color: $c-yellow;
+      width: 150px;
+      position: absolute;
+      display: block;
+    }
+    &__role {
+      color: $c-yellow;
+      display: flex;
+      align-items: center;
+    }
     &--odd {
-      .exec-bio__name, .exec-bio__twitter {
-        text-align: left;
+      padding: 3rem 4rem 0 0;
+      .exec-bio__image {
+        right: 0;
+        left: unset;
+      }
+      .exec-bio__inner {
+        float: right;
+      }
+      .exec-bio__info {
+        float: left;
+      }
+      .exec-bio__line {
+        left: 33%;
       }
     }
   }
-
-  @include breakpoint($bp--large) {
-
+  @include breakpoint($bp--xlarge) {
+    &__info {
+      //width: 23vw;
+    }
+  }
+  @include breakpoint($bp--xxlarge) {
+    &__info {
+      width: 400px;
+    }
   }
 }

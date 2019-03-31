@@ -22,6 +22,10 @@ module.exports = {
       type: 'string',
       description: 'Name of the executive',
     },
+    role: {
+      title: 'Role',
+      type: 'string',
+    },
     twitter: {
       title: 'Twitter Handle',
       type: 'string',
@@ -38,6 +42,7 @@ module.exports = {
       is_even: true,
       avatar: '/images/chris-strahl.jpg',
       name: 'Chris Strahl',
+      role: 'CEO',
       twitter: 'chrisstrahl',
       bio:
         "Chris is Basalt's change management expert. He helps enterprise-level clients incept the right technology strategies, combining long-range business foresight and technical expertise to help organizations adapt, evolve, plan, and optimize value from the systems they use. He has worked with Major League Soccer, the US Department of Defense, NBC, Twitter, Time Inc., Apple, and many others. As an expert digital strategist, Chris loves working consultatively with clients to build design systems that integrate creative teams, decrease time-to-market, and safeguard brand consistency.",
